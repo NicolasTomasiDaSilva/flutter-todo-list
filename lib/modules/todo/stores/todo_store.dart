@@ -17,4 +17,8 @@ abstract class _TodoStore with Store {
 
   @action
   remove(String id) => todos = todos.where((todo) => todo.id != id).toList();
+
+  @action
+  update(Todo todo) =>
+      todos = todos.map((t) => t.id == todo.id ? todo : t).toList();
 }

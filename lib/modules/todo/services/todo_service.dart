@@ -17,4 +17,10 @@ class TodoService {
     await Future.delayed(const Duration(milliseconds: 200));
     _memoryDb.removeWhere((todo) => todo.id == id);
   }
+
+  Future<void> update(Todo todo) async {
+    await Future.delayed(const Duration(milliseconds: 200));
+    _memoryDb.removeWhere((t) => t.id == todo.id);
+    _memoryDb.add(todo);
+  }
 }
